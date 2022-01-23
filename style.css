@@ -1,0 +1,13 @@
+body {
+    margin: 0 auto;
+}
+
+#title-div {
+    width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    /* border: 1px solid red; */
+}
