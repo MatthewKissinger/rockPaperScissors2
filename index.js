@@ -7,7 +7,8 @@ let gameStart = document.getElementById('gameStart');
 // Event Listeners
 
 gameStart.addEventListener("click", function() {
-    roundTotal();
+    // roundTotal();
+    playGame(5);
 } );
 
 // global variables
@@ -104,7 +105,7 @@ function roundTotal() {
     }
 }
 
-function game(numRounds) {
+function playGame(numRounds) {
     
     let round = 1;
 
