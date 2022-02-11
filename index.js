@@ -17,6 +17,8 @@ let computerScore = 0;
 let numRounds;
 
 
+// prompts the user for their choice in the game round
+
 function userPlay() {
     let playerChoice = prompt("Choose Rock, Paper, or Scissors:");
 
@@ -36,6 +38,8 @@ function userPlay() {
     }
 }
 
+// randomly generates a computer choice in the game round
+
 function computerPlay() {
     let randomNumber = Math.floor(Math.random() * 3);
     let result;
@@ -53,6 +57,8 @@ function computerPlay() {
     console.log(result);
     return result;
 }
+
+// compares the user and computer selections and determines the outcome of the game round
 
 function playRound(playerSelection, computerSelection) {
     let result;
@@ -82,6 +88,8 @@ function playRound(playerSelection, computerSelection) {
     return result;
 }
 
+// Lets the player choose the number of rounds for the game
+
 function roundTotal() {
     numRounds = prompt(`Enter 1, 3, or 5 for the game length`);
 
@@ -104,6 +112,9 @@ function roundTotal() {
         return numRounds;
     }
 }
+
+// based on the rounds chosen by the user, it loops through each round, calling the user and computer selection functions for new choices
+// Also, determines the outcome of the match
 
 function playGame(numRounds) {
     
