@@ -9,13 +9,34 @@
     
 </head>
 <body>
-    <div id="title-div">
-        <h1>Rock Paper Scissors</h1>
-        <button id="gameStart">Click Here to Start a Game</button>
-    </div>
+    <main>
+        <div id="title-div">
+            <h1>Rock Paper Scissors</h1>
+        </div>
+        <div id="message-container">
+            <div id="user-selection"></div>
+            <button id="game-start">Click Here to Start a Game</button>
+            <div id="message-display" class="hide"></div>
+            <div id="comp-selection"></div>
+        </div>
+        <div id="score-container">
+            <div id="user-score"></div>
+            <div id="round-container"></div>
+            <div id="computer-score"></div>
+        </div>
     
+        <div id="user-btn-container">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
 
+        <div id="new-round-container">
+            <button id="new-round-btn" class="hide">Next Round</button>
+        </div>
 
+    </main>
+    
 
     <script src="index.js"> </script>
 </body>
