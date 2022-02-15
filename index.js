@@ -1,5 +1,5 @@
 // TODO List
-// Disable the player selection buttons inbetween rounds and before starting a new game
+
 //5. commit changes to the rps-ui branch
 //6. Merge the changes from the rps-ui branch back to the main branch
  
@@ -37,6 +37,8 @@ userButtons.forEach(button => button.addEventListener('click', function() {
 newRoundButton.addEventListener("click", function() {
     nextRound();
 });
+
+// METHODS
 
 // randomly generates a computer choice in the game round
 
@@ -86,26 +88,34 @@ function playRound(playerSelection, computerSelection) {
         messageDisplay.innerText = `The computer wins :(`;
     }
     updateScoreDisplay();
+    disableButtons();
+    if (gameOver()) {
+        return;
+    }
     newRoundButton.classList.remove('hide');
-    gameOver();
 }
 
 function nextRound() {
-    console.log('next round please');
     round++;
     updateScoreDisplay();
     resetMessageBoard();
     newRoundButton.classList.add('hide');
-
+    enableButtons();
 }
 
 function playGame() {
+    userScore = 0;
+    computerScore = 0;
+    round = 1;
+
     gameStart.classList.add('hide');
 
     messageDisplay.classList.remove('hide');
-    messageDisplay.innerText = 'Choose your selection from the buttons below'; 
+    messageDisplay.innerText = 'Your play'; 
 
+    resetMessageBoard();
     updateScoreDisplay();
+    enableButtons();
 }
 
 function updateScoreDisplay() {
@@ -115,7 +125,7 @@ function updateScoreDisplay() {
 }
 
 function resetMessageBoard() {
-    messageDisplay.innerText = 'Choose your selection from the buttons below';
+    messageDisplay.innerText = 'Your play';
     userSelection.innerText = ``;
     compSelection.innerText = ``;
 }
@@ -125,10 +135,21 @@ function gameOver() {
         messageDisplay.classList.add('hide');
         gameStart.classList.remove('hide');
         gameStart.innerText = `You Won! New Game?`;
+        disableButtons();
+        return true;
     } else if (computerScore >= 5) {
         messageDisplay.classList.add('hide');
         gameStart.classList.remove('hide');
         gameStart.innerText = `You Lost! New Game?`;
-
+        disableButtons();
+        return true;
     }
 }
+
+function disableButtons() {
+    userButtons.forEach(button => button.setAttribute('disabled', 'disabled'));
+};
+
+function enableButtons() {
+    userButtons.forEach(button => button.removeAttribute('disabled'));
+};

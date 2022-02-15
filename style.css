@@ -1,7 +1,7 @@
 body {
     margin: 0 auto;
     font-family: Arial, Helvetica, sans-serif;
-
+    background-color: #e8e7ec;
 }
 
 .hide {
@@ -10,17 +10,20 @@ body {
 
 main {
     /* border: 1px solid purple; */
-    max-width: 700px;
+    max-width: 750px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     justify-content: space-around;
 }
 
 #title-div {
+    /* border: 1px solid green; */
     margin: 0 auto;
+    font-size: 32px;
     text-align: center;
+    letter-spacing: 1.5px;
 }
 
 #message-container {
@@ -29,7 +32,8 @@ main {
     align-items: center;
     justify-content: space-between;
     height: 180px;
-    width: 100%;
+    width: 80%;
+    border-radius: 8px;
 }
 
 #user-selection {
@@ -38,9 +42,10 @@ main {
 }
 
 #message-display {
-    font-size: 20px;
+    font-size: 24px;
     width: 200px;
     text-align: center;
+    font-weight: 500;
 }
 
 #comp-selection {
@@ -54,7 +59,7 @@ main {
     color: white;
     height: 70px;
     width: 250px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size: 16px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -63,8 +68,11 @@ main {
 }
 
 #score-container {
+    border-radius: 8px;
     font-size: 20px;
     /* border: 1px solid orange; */
+    background-color: #605970;
+    color: rgb(243, 245, 246);
     height: 100px;
     width: 100%;
     margin: 0 auto;
@@ -90,6 +98,7 @@ main {
 #user-btn-container button {
     height: 150px;
     width: 150px;
+    margin: 25px;
     border-radius: 50%;
     border: none;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.3);
